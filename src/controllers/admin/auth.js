@@ -57,9 +57,11 @@ exports.signin = (req, res) => {
         });
       } else {
         return res.status(400).json({ message: "incorrect Password" });
+		console.log("incorrect password");
       }
     } else {
       return res.status(400).json({ message: "admin not exist " });
+	  console.log("admin not exist");
     }
   });
 };

@@ -4,8 +4,8 @@ const slugify = require("slugify");
 
 exports.AddCar = (req, res) => {
 
-  console.log(req.body)
-  console.log(req.files)
+//  console.log(req.body)
+  //console.log(req.files)
 
 
 
@@ -36,12 +36,13 @@ exports.AddCar = (req, res) => {
 
 
 
-  console.log(new_car)
 
   new_car.save((error, data) => {
     if (data) {
       res.status(200).json({ data: data })
+      console.log(new_car)
     } else {
+	      console.log("Something wrong")	
       res.status(400).json({ error: error })
     }
   })

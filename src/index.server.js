@@ -18,6 +18,9 @@ app.use(cors())
 app.use('/api', adminRoutes)
 app.use('/api', addcar)
 
+app.get('/',(req,res)=>{
+	res.send('hello word')
+})
 
 // get file api 
 app.get('/getfile/:filename', (req,res)=>{
@@ -28,6 +31,6 @@ app.get('/getfile/:filename', (req,res)=>{
 })
 
 
-app.listen(2000, ()=>{
+app.listen(process.env.PORT || 2000, ()=>{
     console.log("server is runnning on port "+ 2000)
 })
